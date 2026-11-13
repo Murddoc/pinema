@@ -1,0 +1,48 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_extName__",
+  "short_name": "__MSG_extShortName__",
+  "description": "__MSG_extDescription__",
+  "version": "1.1.0",
+  "default_locale": "en",
+  "minimum_chrome_version": "105",
+  "permissions": ["storage"],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "__MSG_actionTitle__",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.pinterest.com/*",
+        "*://*.pinterest.fr/*",
+        "*://*.pinterest.ca/*",
+        "*://*.pinterest.ch/*",
+        "*://*.pinterest.de/*",
+        "*://*.pinterest.at/*",
+        "*://*.pinterest.es/*",
+        "*://*.pinterest.it/*",
+        "*://*.pinterest.pt/*",
+        "*://*.pinterest.co.uk/*",
+        "*://*.pinterest.ie/*",
+        "*://*.pinterest.com.au/*",
+        "*://*.pinterest.nz/*",
+        "*://*.pinterest.com.mx/*",
+        "*://*.pinterest.jp/*"
+      ],
+      "js": ["src/settings.js", "src/common.js", "src/cinema.js", "src/thumbs.js", "src/main.js"],
+      "css": ["src/content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

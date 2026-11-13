@@ -1,0 +1,222 @@
+/* Pinema – styles injectés dans Pinterest.
+   Les dimensions partagées avec le JavaScript sont des variables CSS posées
+   par le script (--pinema-frame-padding, --pinema-v-offset, --pinema-thumb-size,
+   --pinema-shift) : une seule source de vérité, dans les fichiers .js. */
+
+/* ========================================================================== */
+/* Mode cinéma (src/cinema.js)                                                 */
+/* ========================================================================== */
+
+/* Bloc inséré au-dessus de la grille : cadre de l'image + emplacement des infos */
+#pinema-stage {
+  box-sizing: border-box;
+  width: 100%;
+  padding-bottom: 24px;
+  animation: pinema-in 0.25s ease-out;
+}
+
+#pinema-stage .pinema-frame {
+  box-sizing: border-box;
+  padding: var(--pinema-frame-padding, 18px);
+  background: #efefef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Fond sombre : option « Fond sombre », ou Pinterest en thème sombre */
+#pinema-stage[data-pinema-dark] .pinema-frame { background: #0f0f0f; }
+
+#pinema-stage .pinema-img {
+  display: block;
+  max-width: 100%;
+  max-height: calc(100vh - var(--pinema-v-offset, 150px));
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  cursor: zoom-in;
+}
+
+/* Conteneur à la taille de l'image (support des boutons) */
+#pinema-stage .pinema-holder {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  line-height: 0;
+}
+
+/* Boutons Pinterest recopiés (option « Boutons sur l'image ») */
+#pinema-stage .pinema-buttons {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#pinema-stage .pinema-btn {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 12px;
+  background: rgba(233, 233, 233, 0.85);
+  color: #111;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+#pinema-stage .pinema-btn:hover { background: #fff; }
+
+/* Place réservée à la carte d'infos (hauteur réglée en JS) */
+#pinema-stage .pinema-slot { margin-top: 24px; }
+
+/* Partie image de la carte masquée, infos recentrées */
+[data-pinema-hidden] { display: none !important; }
+[data-pinema-row] { justify-content: center !important; }
+
+/* Case de la carte dans la grille réduite à 1px : la grille se réorganise
+   sur toute la largeur (à 0px, Pinterest ne recalcule pas). */
+[data-pinema-wrap] {
+  height: 1px !important;
+  min-height: 0 !important;
+  max-height: 1px !important;
+  overflow: visible !important;
+  position: relative !important;
+}
+
+/* La carte s'affiche dans l'emplacement réservé (top/left/width posés en JS) */
+[data-pinema-card] {
+  position: absolute !important;
+  z-index: 2;
+  margin: 0 !important;
+  max-width: none !important;
+}
+
+/* Sans l'image, la carte garderait la hauteur de l'ancienne photo : le bloc de
+   description a une hauteur minimale fixe et container-type:size. */
+[data-pinema-card] [data-test-id="description-content-container"] {
+  min-height: 0 !important;
+  height: auto !important;
+  container-type: normal !important;
+}
+[data-pinema-card] [style*="height: 100%"] { height: auto !important; }
+
+/* ========================================================================== */
+/* Miniatures et visionneuse (src/thumbs.js)                                   */
+/* ========================================================================== */
+
+/* Option « Enlever le bouton Send » */
+html[data-pinema-hide-share] [data-test-id="share-icon-button"] { display: none !important; }
+
+.pinema-thumb-btn {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 10;
+  width: var(--pinema-thumb-size, 36px);
+  height: var(--pinema-thumb-size, 36px);
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: #111;
+  display: grid;
+  place-items: center;
+  cursor: zoom-in;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.12s, background 0.12s;
+}
+[data-test-id="pinWrapper"]:hover > .pinema-thumb-btn {
+  opacity: 1;
+  pointer-events: auto;
+}
+.pinema-thumb-btn:hover { background: #fff; }
+
+/* Boutons Pinterest du coin bas-droit (Edit, Send) décalés à gauche du nôtre.
+   `translate` se cumule avec un éventuel `transform` de Pinterest. */
+html[data-pinema-thumbs] [data-pinema-shift] {
+  translate: calc(-1 * var(--pinema-shift, 44px)) 0 !important;
+}
+
+/* Visionneuse plein écran */
+#pinema-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483000;
+  background: rgba(0, 0, 0, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+  animation: pinema-in 0.15s ease-out;
+}
+#pinema-lightbox .pinema-lb-img {
+  max-width: 94vw;
+  max-height: 92vh;
+  object-fit: contain;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  cursor: zoom-in;
+}
+#pinema-lightbox .pinema-lb-close {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: #111;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+/* Flèches pin précédent / suivant (aussi au clavier : ← / →) */
+#pinema-lightbox .pinema-lb-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+#pinema-lightbox .pinema-lb-nav:hover { background: rgba(255, 255, 255, 0.35); }
+#pinema-lightbox .pinema-lb-prev { left: 16px; }
+#pinema-lightbox .pinema-lb-next { right: 16px; }
+
+/* ========================================================================== */
+/* Commun                                                                      */
+/* ========================================================================== */
+
+/* Icônes au trait */
+#pinema-stage .pinema-btn svg,
+.pinema-thumb-btn svg,
+#pinema-lightbox button svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.pinema-thumb-btn svg { width: 18px; height: 18px; }
+#pinema-lightbox .pinema-lb-nav svg { width: 24px; height: 24px; stroke-width: 2.4; }
+
+@keyframes pinema-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

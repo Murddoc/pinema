@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pinema</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <div class="logo"><img src="../icons/logo.png" alt=""></div>
+    <div>
+      <h1>Pinema</h1>
+      <p class="tagline" data-i18n="tagline"></p>
+    </div>
+  </header>
+
+  <!-- Chaque option : data-i18n-title / data-i18n-desc = clés de _locales,
+       id de la case = clé du réglage (src/settings.js),
+       data-requires = option qui doit être active pour celle-ci -->
+  <main>
+    <label class="row">
+      <span class="text">
+        <span class="title" data-i18n="optCinema"></span>
+        <span class="desc" data-i18n="optCinemaDesc"></span>
+      </span>
+      <input type="checkbox" id="cinema">
+      <span class="switch"></span>
+    </label>
+
+    <label class="row" data-requires="cinema">
+      <span class="text">
+        <span class="title" data-i18n="optAllImages"></span>
+        <span class="desc" data-i18n="optAllImagesDesc"></span>
+      </span>
+      <input type="checkbox" id="allImages">
+      <span class="switch"></span>
+    </label>
+
+    <label class="row" data-requires="cinema">
+      <span class="text">
+        <span class="title" data-i18n="optImageButtons"></span>
+        <span class="desc" data-i18n="optImageButtonsDesc"></span>
+      </span>
+      <input type="checkbox" id="imageButtons">
+      <span class="switch"></span>
+    </label>
+
+    <label class="row" data-requires="cinema">
+      <span class="text">
+        <span class="title" data-i18n="optDarkStage"></span>
+        <span class="desc" data-i18n="optDarkStageDesc"></span>
+      </span>
+      <input type="checkbox" id="darkStage">
+      <span class="switch"></span>
+    </label>
+
+    <p class="section" data-i18n="sectionThumbs"></p>
+
+    <label class="row">
+      <span class="text">
+        <span class="title" data-i18n="optThumbExpand"></span>
+        <span class="desc" data-i18n="optThumbExpandDesc"></span>
+      </span>
+      <input type="checkbox" id="thumbExpand">
+      <span class="switch"></span>
+    </label>
+
+    <label class="row">
+      <span class="text">
+        <span class="title" data-i18n="optHideShare"></span>
+        <span class="desc" data-i18n="optHideShareDesc"></span>
+      </span>
+      <input type="checkbox" id="hideShare">
+      <span class="switch"></span>
+    </label>
+  </main>
+
+  <footer data-i18n="footer"></footer>
+
+  <script src="../src/settings.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

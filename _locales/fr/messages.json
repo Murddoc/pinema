@@ -1,0 +1,29 @@
+{
+  "extName": { "message": "Pinema – Mode cinéma pour Pinterest" },
+  "extShortName": { "message": "Pinema" },
+  "extDescription": { "message": "Affiche les images des pins en grand, en haute résolution, avec un aperçu plein écran depuis les miniatures." },
+  "actionTitle": { "message": "Pinema – réglages" },
+
+  "tagline": { "message": "Pinterest, en grand." },
+  "optCinema": { "message": "Mode cinéma" },
+  "optCinemaDesc": { "message": "Taille réelle et centrer les images" },
+  "optAllImages": { "message": "Affecter toutes les images" },
+  "optAllImagesDesc": { "message": "Même les images verticales ou en basse résolution" },
+  "optImageButtons": { "message": "Boutons sur l'image" },
+  "optImageButtonsDesc": { "message": "Agrandir et recherche visuelle de Pinterest" },
+  "optDarkStage": { "message": "Fond sombre" },
+  "optDarkStageDesc": { "message": "Derrière l'image en mode cinéma" },
+  "sectionThumbs": { "message": "Miniatures" },
+  "optThumbExpand": { "message": "Bouton agrandir" },
+  "optThumbExpandDesc": { "message": "Aperçu grand format au survol · ← → pour naviguer" },
+  "optHideShare": { "message": "Enlever le bouton « Send »" },
+  "optHideShareDesc": { "message": "Masque le bouton partager de Pinterest" },
+  "footer": { "message": "Réglages mémorisés · Extension indépendante, non affiliée à Pinterest" },
+
+  "btnEnlarge": { "message": "Agrandir" },
+  "btnVisualSearch": { "message": "Rechercher dans l'image" },
+  "openOriginal": { "message": "Ouvrir l'image originale" },
+  "lbClose": { "message": "Fermer (Échap)" },
+  "lbPrev": { "message": "Pin précédent (←)" },
+  "lbNext": { "message": "Pin suivant (→)" }
+}

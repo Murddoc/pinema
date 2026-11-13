@@ -1,0 +1,29 @@
+{
+  "extName": { "message": "Pinema – Cinema mode for Pinterest" },
+  "extShortName": { "message": "Pinema" },
+  "extDescription": { "message": "Shows pin images large and in high resolution, with a full-screen preview right from the thumbnails." },
+  "actionTitle": { "message": "Pinema – settings" },
+
+  "tagline": { "message": "Pinterest, big screen." },
+  "optCinema": { "message": "Cinema mode" },
+  "optCinemaDesc": { "message": "Show images centered, at full size" },
+  "optAllImages": { "message": "Apply to all images" },
+  "optAllImagesDesc": { "message": "Including portrait and low-resolution images" },
+  "optImageButtons": { "message": "Buttons on the image" },
+  "optImageButtonsDesc": { "message": "Pinterest's enlarge and visual search" },
+  "optDarkStage": { "message": "Dark background" },
+  "optDarkStageDesc": { "message": "Behind the image in cinema mode" },
+  "sectionThumbs": { "message": "Thumbnails" },
+  "optThumbExpand": { "message": "Enlarge button" },
+  "optThumbExpandDesc": { "message": "Full-size preview on hover · ← → to browse" },
+  "optHideShare": { "message": "Remove the “Send” button" },
+  "optHideShareDesc": { "message": "Hides Pinterest's share button" },
+  "footer": { "message": "Settings saved · Independent extension, not affiliated with Pinterest" },
+
+  "btnEnlarge": { "message": "Enlarge" },
+  "btnVisualSearch": { "message": "Search within image" },
+  "openOriginal": { "message": "Open original image" },
+  "lbClose": { "message": "Close (Esc)" },
+  "lbPrev": { "message": "Previous pin (←)" },
+  "lbNext": { "message": "Next pin (→)" }
+}
