@@ -91,4 +91,4 @@ et certifier les trois déclarations (pas de vente, pas d'usage hors objectif un
 pas d'usage pour la solvabilité/prêts).
 
 **Politique de confidentialité (URL) :** facultative quand aucune donnée n'est collectée.
-Si demandée : publier `store/PRIVACY.md` (par ex. GitHub Pages ou un Gist) et coller l'URL.
+URL à coller : https://github.com/Murddoc/pinema/blob/main/store/PRIVACY.md
