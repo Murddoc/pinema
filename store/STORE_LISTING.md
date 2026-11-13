@@ -24,6 +24,9 @@ FEATURES
 • Dark background (optional), follows Pinterest's dark theme automatically.
 • Remove Pinterest's “Send” button from thumbnails (optional).
 
+GOOD TO KNOW
+Pinema loads pin images in their original resolution, which are much larger files than the ones Pinterest shows by default. Browsing Pinterest with Pinema can therefore use noticeably more bandwidth: keep this in mind on a mobile hotspot or a limited data plan. You can turn cinema mode off at any time from the extension popup.
+
 PRIVACY
 Pinema collects no data, has no account, no tracking and no external server. It only runs on Pinterest pages and stores your settings in your browser.
 
@@ -42,6 +45,9 @@ FONCTIONNALITÉS
 • Boutons Pinterest sur la grande image (optionnel) – agrandir et recherche visuelle.
 • Fond sombre (optionnel), suit automatiquement le thème sombre de Pinterest.
 • Enlever le bouton « Send » des miniatures (optionnel).
+
+BON À SAVOIR
+Pinema charge les images des pins en résolution originale, des fichiers bien plus lourds que ceux affichés par défaut par Pinterest. Naviguer sur Pinterest avec Pinema peut donc consommer nettement plus de bande passante : pensez-y en partage de connexion ou avec un forfait limité. Le mode cinéma se désactive à tout moment depuis la fenêtre de l'extension.
 
 CONFIDENTIALITÉ
 Pinema ne collecte aucune donnée : pas de compte, pas de pistage, pas de serveur externe. L'extension ne fonctionne que sur Pinterest et garde vos réglages dans votre navigateur.
